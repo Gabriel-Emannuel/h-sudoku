@@ -71,13 +71,18 @@ executable h-sudoku
     -- other-extensions:
 
     -- Other library packages from which modules are imported.
-    build-depends:    base ^>=4.17.2.1
+    build-depends:    base ^>=4.17.2.1, h-sudoku
 
     -- Directories containing source files.
-    hs-source-dirs:   app
+    hs-source-dirs:   app, src
 
     -- Base language which the package is written in.
     default-language: Haskell2010
+
+    other-modules: 
+      Helpers.ErrorArgumentsMessage,
+      Helpers.HelpMessage, 
+      Lib
 
 library
   
@@ -88,6 +93,9 @@ library
   build-depends: base >=4.7 && <5
   
   default-language: Haskell2010
+
+  other-modules: 
+      Resolver
 
 test-suite my-project-test-suite
   
