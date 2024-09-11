@@ -1,4 +1,4 @@
-module Resolver (resolveSudoku) where
+module Resolver where
 
 import Data.List(delete, intersect, transpose, elemIndex)
 
@@ -117,10 +117,13 @@ generateQuadrants :: Int -> [[Int]] -> [[Int]]
 generateQuadrants _ [] = []
 generateQuadrants x board
     | x >= lengthBoard = generateQuadrants 0 (drop dimension board)
-    | otherwise = (findNumsMis . concatMap (drop x . take dimension) . take dimension) board : generateQuadrants (x + dimension) board
+    | otherwise = (concatMap (take dimension . drop x) . take dimension) board : generateQuadrants (x + dimension) board
     where
         lengthBoard = (length . head ) board
-        dimension = (round . sqrt . convertFloat . length . head) board
+        dimension = (calculateDimension . head) board
+
+calculateDimension :: [Int] -> Int
+calculateDimension = round . sqrt . convertFloat . length
 
 convertFloat :: Int -> Float
 convertFloat = fromIntegral
