@@ -1,4 +1,4 @@
-module ResolverTests.Consts (board9x9, board4x4) where
+module ResolverTests.Consts (board9x9, board4x4, board9x9Filled, board4x4Filled) where
 
 board9x9 :: [[Int]]
 board9x9 = [
@@ -19,4 +19,25 @@ board4x4 = [
     [0,4,0,2],
     [2,0,4,1],
     [0,1,0,0]
+    ]
+
+board9x9Filled :: [[Int]]
+board9x9Filled = [
+    [0,8,5,0,0,0,7,0,3],
+    [4,0,0,8,0,0,1,2,0],
+    [0,0,0,4,0,0,8,5,0],
+    [7,3,8,6,5,4,9,1,2],
+    [1,5,4,2,9,3,6,8,7],
+    [2,6,9,7,1,8,4,3,5],
+    [5,2,0,9,0,1,3,7,8],
+    [0,9,1,3,7,2,5,6,4],
+    [0,4,7,5,8,6,2,9,1]
+    ]
+
+board4x4Filled :: [[Int]]
+board4x4Filled = [
+    [1,2,3,4],
+    [3,4,1,2],
+    [2,3,4,1],
+    [4,1,2,3]
     ]
