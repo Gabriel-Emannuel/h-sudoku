@@ -1,7 +1,4 @@
-module Lib  where 
+module Lib where
 
-readProtocol :: String -> [String] -> IO ()
-readProtocol _ _ = undefined
-
-writeProtocol :: [String] -> IO ()
-writeProtocol _ = undefined
+helloWorld :: String
+helloWorld = "Hey"
