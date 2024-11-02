@@ -71,7 +71,7 @@ executable h-sudoku
     -- other-extensions:
 
     -- Other library packages from which modules are imported.
-    build-depends:    base ^>=4.17.2.1, h-sudoku
+    build-depends:    base ^>=4.17.2.1, h-sudoku, split
 
     -- Directories containing source files.
     hs-source-dirs:   app, src
@@ -79,12 +79,14 @@ executable h-sudoku
     -- Base language which the package is written in.
     default-language: Haskell2010
 
+    other-modules: GenerateFuncionality, ResolverFunctionality
+
 
 library
   
   hs-source-dirs: src
   
-  exposed-modules: Lib, Resolver
+  exposed-modules: Util, Resolver
   
   build-depends: base >=4.7 && <5
   

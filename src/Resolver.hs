@@ -1,8 +1,7 @@
 module Resolver (missingLines, missingCols, missingQuadrants, missingNumbersLineColsQuadrants, fillBoard, identifyPossibleValues, resolveSudoku) where
-import Data.List (transpose, findIndex, nub)
+import Data.List ( transpose, nub, elemIndex )
 import Data.Maybe (isNothing, isJust)
-import GHC.OldList (intersect, find)
-import Data.List (elemIndex)
+import GHC.OldList (intersect)
 
 resolveSudoku :: [[Int]] -> [[Int]]
 resolveSudoku board
