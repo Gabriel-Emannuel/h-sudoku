@@ -23,9 +23,13 @@ resolve (filepath: args) = do
 resolve _ = errorMessage
 
 saveOrPrint :: [[Int]] -> [String] -> IO ()
-saveOrPrint _ [_] = putStrLn "Saving CSV File not implemented Yet"
+saveOrPrint sudokuBoard [filepath] = saveBoard sudokuBoard filepath 
 saveOrPrint sudokuBoard []         = printBoard sudokuBoard
 saveOrPrint _ _                    = putStrLn "Option Invalid"
+
+saveBoard :: [[Int]] -> String -> IO ()
+saveBoard sudokuBoard filepath = 
+    (writeFile filepath) ((unlines . map unwords . map (map show)) sudokuBoard)
 
 printBoard :: [[Int]] -> IO ()
 printBoard [] = putStrLn "---"
