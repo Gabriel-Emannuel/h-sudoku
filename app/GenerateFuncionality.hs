@@ -58,8 +58,8 @@ generateLineRandom line = do
 showCommands :: IO ()
 showCommands = do
     putStrLn "hsudoku generate [dimension] [optional: dest-file-path]"
-    putStrLn "  dimension: a positive number bigger than 0"
-    putStrLn "             this number need to have a natural square root"
+    putStrLn "  dimension: a positive number bigger than 0, this is the dimension for a quadrant in the board!"
+    putStrLn "             if you put a value of 3, the board gonna have quadrants with the size of 3, this means the game is 9x9!"
     putStrLn "  dest-file-path: if presented in the input, the sudoku isn't printed in the terminal but saved in this file"
 
 convertInt :: String -> Int
